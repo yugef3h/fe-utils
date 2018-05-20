@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style class="reset">
+        ol, ul, li {
+            list-style: none;
+        }
+        .distraction-title, .post-body a strong, a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+            margin: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            color: #555;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+    </style>
+    <style>
+        .nav-mob-toggle {
+            transform: rotate(90deg);
+            transition: transform .4s;
+            opacity: 1!important;
+            position: relative;
+            z-index: 998;
+        }
+        .nav-mob-toggle span {
+            background-color: #fff;
+            display: block;
+            height: 2px;
+            left: 14px;
+            margin-top: -1px;
+            position: absolute;
+            top: 50%;
+            width: 20px;
+        }
+        .nav-mob-toggle span:first-child {
+            transform: rotate(45deg) translate(0,0);
+        }
+        .nav-mob-toggle span:last-child {
+            transform: rotate(-45deg) translate(0,0);
+        }
+        .nav-mob-toggle span:nth-child(2) {
+            transform: scaleX(0);
+        }
+        .nav-icons {
+            float: right;
+        }
+        .nav-icons li>a {
+            display: block;
+            height: 48px;
+            padding: 16px;
+            width: 48px;
+            will-change: opacity;
+        }
+        .nav-mob-content {
+            overflow: auto;
+            border-top: 1px solid rgba(255,255,255,.15);
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            position: absolute;
+            right: 0;
+            top: 48px;
+        }
+        .nav-mob-follow {
+            border-bottom: 1px solid rgba(255,255,255,.15);
+            margin: 0 -20px 2em -20px;
+            padding: 0 20px 20px 20px;
+        }
+        .nav-mob-follow li {
+            float: left;
+            height: 16px;
+            margin-bottom: 0;
+            text-align: center;
+            width: 10%;
+        }
+        .nav-mob-follow .icon {
+            margin: 0 auto;
+        }
+        .icon {
+            display: block;
+            width: 16px;
+            height: 16px;
+        }
+        h5 {
+            font-family: Shentox,sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: .04em;
+            line-height: 1.5;
+        }
+        .nav-mob {
+            transition: .4s;
+            background: linear-gradient(to bottom right,#c09,#f42 85%);
+            color: #fff;
+            height: 100vh;
+            left: 0;
+            padding: 48px 20px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            will-change: transform;
+            z-index: 997;
+        }
+        .u-row {
+            display: flex;
+            flex: 0 1 auto;
+            flex-flow: row wrap;
+            margin: -8px;
+        }
+        .u-col-xs-6 {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        [class*=" u-col-"], [class^=u-col-] {
+            flex: 0 0 auto;
+            padding: 8px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="/" title="The Next Web">
+                <!--影响了 × 号-->
+                <!--<img alt="The Next Web" src="https://cdn0.tnwcdn.com/wp-content/themes/cyberdelia/assets/img/tnw.svg">-->
+            </a>
+        </div>
+        <div class="u-clear">
+            <ul class="nav-icons">
+                <li></li>
+                <li>
+                    <a href="#" class="nav-mob-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-mob">
+            <div class="nav-mob-content">
+                <div class="nav-mob-follow">
+                    <li>email<a href="#"><i><!--图标列表--></i></a></li>
+                    <li>facebook</li>
+                    <li>google</li>
+                </div>
+                <div class="u-row">
+                    <div class="u-col-xs-6">
+                        <h5>Sections</h5>
+                        <ul class="nav-mob-menu">
+                            <li>Latest</li>
+                            <li>Insights</li>
+                            <li>Contributes</li>
+                            <li>Full Stack</li>
+                            <li>Investing 2.0</li>
+                        </ul>
+                    </div>
+                    <div class="u-col-xs-6">
+                        <h5>About TNW</h5>
+                        <ul class="nav-mob-menu">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                        <h5>TNW Sites</h5>
+                        <ul class="nav-mob-menu">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
