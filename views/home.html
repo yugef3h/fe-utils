@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+  <h2 class="title">ejs 模板引擎，开发人员：<%=globalUser%></h2>
+  <%-include('./components/header.html')%>
+  <%for(let i=0; i<5; i++) {%>
+  <p><%=title%></p>
+  <%}%>
+
+  <%if(5>1){%>
+    <p>{{'测试 5 > 1 显示'}}</p>
+  <%}%>
+
+
+  <%-htmlCt%>
+  <%= obj.stand %>
+  <%= obj['stand'] %>
+  <%= !obj.stand ? obj.stand : title %>
+  <%= obj.stand + title %>
+  <%= obj.stand || title %>
+
+  {{if 5>1}}
+    <p>大于1</p>
+  {{else}}
+    <p>错误，也可以 else if</p>
+  {{/if}}
+
+  {{each arr}}
+    <p>{{$index}}--{{$value}} <span class="title">注意：循环时加$，其余时候不加</span></p>
+  {{/each}}
+
+  {{@ htmlCt}} <span>能解析html和双引号模板等</span>
+  {{title || obj.stand}}
+  {{1+2}}
+  {{'1'+'2'}}
+
+  {{'待了解：'}}
+  {{'art-template过滤器'}}
+  {{include 'components/header.html'}}
+  
+
+  <a href="/news?title={{@title}}">编辑前先获取数据，其中@是为了去掉引号：/news?title=/{/{@title/}/} </a>
+
+
+  <form action="/doAdd" method="POST">
+    <p><input type="hidden" name="id" placeholder="_id" value="{{@_id}}"></p>
+    <p><input type="text" name="username" placeholder="用户名" value="admin"></p>
+    <p><input type="password" name="password" placeholder="密码"></p>
+    <p><button type="submit">提 交</button></p>
+  </form>
+</body>
+</html>
